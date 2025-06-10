@@ -14,11 +14,11 @@ app.use(express.json());
 app.post("/openai", async (req, res) => {
   const prompt = req.body.prompt;
   
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  const response = await fetch("https://api.openai.com/v1/chat/responses", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
     },
     body: JSON.stringify({
       model: "gpt-4.1",
