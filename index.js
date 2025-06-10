@@ -22,7 +22,7 @@ app.post("/openai", async (req, res) => {
     },
     body: JSON.stringify({
       model: "gpt-4.1",
-      messages: [{ role: "user", content: prompt }],
+      input: prompt,
     }),
   });
 
