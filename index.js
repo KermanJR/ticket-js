@@ -14,7 +14,7 @@ app.use(express.json());
 app.post("/openai", async (req, res) => {
   const prompt = req.body.prompt;
   
-  const response = await fetch("https://api.openai.com/v1/responses", {
+  const response = await fetch("https://api.openai.com/v1/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,8 @@ app.post("/openai", async (req, res) => {
     },
     body: JSON.stringify({
       model: "gpt-4.1",
-      input: prompt,
+      prompt: prompt,
+      max_tokens: 10,
     }),
   });
 
