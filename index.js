@@ -14,7 +14,7 @@ app.use(express.json());
 app.post("/openai", async (req, res) => {
   const prompt = req.body.prompt;
   
-  const response = await fetch("https://api.openai.com/v1/chat/responses", {
+  const response = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
