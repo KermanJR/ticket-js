@@ -6,7 +6,7 @@ const app = express();
 
 // ✅ habilita o CORS apenas para sua extensão
 app.use(cors({
-  origin: "chrome-extension://kcpcibkhonloiagbgkdgkjhjlbjgfedl"
+  origin: "chrome-extension://fajobbdikkbaemdkjpccjcediglhdmff"
 }));
 
 app.use(express.json());
@@ -18,7 +18,7 @@ app.post("/openai", async (req, res) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
     },
     body: JSON.stringify({
       model: "gpt-4.1",
