@@ -18,7 +18,7 @@ app.post("/openai", async (req, res) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
     },
     body: JSON.stringify({
       model: "gpt-4.1",
