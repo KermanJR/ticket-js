@@ -25,8 +25,7 @@ app.post("/ia", async (req, res) => {
     body: JSON.stringify({
       model: "openai/gpt-4o", // ou outro modelo suportado
       messages: [
-        { role: "system", content: "Você é um assistente que gera tickets." },
-        { role: "user", content: prompt }
+        { role: "system", content: prompt }
       ],
       max_tokens: 3999
     })
