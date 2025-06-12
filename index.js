@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config(); // 🔑 Carrega as variáveis do .env
+dotenv.config();
 
 const app = express();
 
@@ -13,20 +13,22 @@ app.use(cors({
 
 app.use(express.json());
 
-app.post("/openai", async (req, res) => {
+app.post("/ia", async (req, res) => {
   const prompt = req.body.prompt;
 
-  const response = await fetch("https://api.openai.com/v1/completions", {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+      "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "gpt-4.1",
-      prompt: prompt,
-      max_tokens: 10,
-    }),
+      model: "mistral/mistral-7b-instruct", // ou outro modelo suportado
+      messages: [
+        { role: "system", content: "Você é um assistente que gera tickets." },
+        { role: "user", content: prompt }
+      ],
+    })
   });
 
   const data = await response.json();
