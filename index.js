@@ -28,6 +28,7 @@ app.post("/ia", async (req, res) => {
         { role: "system", content: "Você é um assistente que gera tickets." },
         { role: "user", content: prompt }
       ],
+      max_tokens: 3999
     })
   });
 
