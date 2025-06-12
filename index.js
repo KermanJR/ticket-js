@@ -23,7 +23,7 @@ app.post("/ia", async (req, res) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "mistral/mistral-7b-instruct", // ou outro modelo suportado
+      model: "openai/gpt-4o", // ou outro modelo suportado
       messages: [
         { role: "system", content: "Você é um assistente que gera tickets." },
         { role: "user", content: prompt }
